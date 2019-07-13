@@ -229,6 +229,15 @@ countDown(2)
 countDown(7)
 => "7, 6, 5, 4, 3, 2, 1, done"
 */
+function countDown(n) {
+    var t = ""
+    while (n !== 0) {
+        t += ", " + n
+        n--
+    }
+    t = t.slice(2)
+    return t + ", done"
+}
 
 /*
 10
@@ -244,6 +253,15 @@ multiplication2(2,8) => 16
 multiplication2(7,6) =>  42
 */
 
+
+function multiplication2(x, y) {
+    var t = 0
+    while (y !== 0) {
+        t += x
+        y--
+    }
+    return t
+}
 /*
 11
 Write a function called mod2
@@ -256,7 +274,13 @@ mod2(2,8) => 2
 
 mod2(7,4) => 3
 */
+function mod2(x, y) {
+    while (x >= y) {
+        x -= y
 
+    }
+    return x
+}
 
 /*
 12
@@ -276,7 +300,16 @@ repeatChar("School","s") => 1
 
 try more case by yourself
 */
-
+function repeatChar(st1, st2) {
+    var t = 0
+    while (st1.length != 0) {
+        if (st1.slice(st1.length - 1) == st2.toUpperCase() || st1.slice(st1.length - 1) == st2.toLowerCase()) {
+            t++
+        }
+        st1 = st1.slice(0, st1.length - 1)
+    }
+    return t
+}
 
 
 
@@ -314,7 +347,20 @@ fibon(n): 1 1 2 3 5 8 13 21
           | | | | | |  |  |
 n:        0 1 2 3 4 5  6  7
 */
+function fibon(x) {
 
+    var t1 = 0;
+    var t2 = 1;
+    var t = 0;
+    while (x > 1) {
+        t = t1 + t2
+        t1 = t2
+        t2 = t
+        x--
+    }
+    return t1 + t2
+
+}
 
 /*
 2
@@ -333,6 +379,14 @@ mirror("maDrasa") => "asarDam"
 
 */
 
+function mirror(st) {
+    var t = ""
+    while (st.length !== 0) {
+        t += st.slice(st.length - 1)
+        st = st.slice(0, st.length - 1)
+    }
+    return t
+}
 
 
 /*
@@ -354,7 +408,18 @@ mirrorCaseAlso("BaBa") => "AbAb"
 
 */
 
-
+function mirrorCaseAlso(st) {
+    var t = ""
+    while (st.length !== 0) {
+        if (st.slice(st.length - 1).toLowerCase() == st.slice(st.length - 1)) {
+            t += st.slice(st.length - 1).toUpperCase()
+        } else {
+            t += st.slice(st.length - 1).toLowerCase()
+        }
+        st = st.slice(0, st.length - 1)
+    }
+    return t
+}
 
 /*
 4
@@ -376,6 +441,14 @@ repeatChar2("School","S") => 1
 try more case by yourself
 */
 
+function repeatChar2(st1, st2) {
+    var t = 0
+    while (st1.length !== 0) {
+        if (st1.slice(st1.length - 1) == st2) { t++ }
+        st1 = st1.slice(0, st1.length - 1)
+    }
+    return t
+}
 
 /*
 5
@@ -400,4 +473,27 @@ hi 5 Now Pleas Say Hello To 1, 2, 3 and 4
 hi 6 Now Pleas Say Hello To 1, 2, 3, 4 and 5
 hi 7 Now Pleas Say Hello To 1, 2, 3, 4, 5 and 6
 */
+
+function HiSayHelloTo(x) {
+    var t = 1
+    var m = ""
+    if (x >= 1) {
+        console.log("hi 1")
+        t++
+    }
+
+    while (t <= x) {
+        if (t === 2) {
+            console.log("hi " + (t) + " Now Pleas Say Hello To " + (t - 1))
+        }
+        else if (t > 2) {
+            m += ", " + (t - 2)
+            console.log("hi " + (t) + " Now Pleas Say Hello To " + m.slice(2) + " and " + (t - 1))
+
+        }
+        t++
+    }
+    return ""
+
+}
 
