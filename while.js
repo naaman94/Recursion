@@ -13,7 +13,7 @@
 console.log('Here is : While')
 
 /*
-1
+01
 Create a function called subtract
 that takes a single parameter n,
 and return the subtraction of all
